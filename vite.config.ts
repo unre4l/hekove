@@ -16,4 +16,13 @@ export default defineConfig({
     },
   },
   base: 'https://unre4l.github.io/hekove/',
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+  },
 })
