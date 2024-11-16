@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+async function asd () {
+  const data = new FormData();
+  data.set('pwm', '12');
+  const response = await fetch('/set', { method: 'post', body: data});
+  const asda = await response.text();
+  console.log(asda);
+}
 </script>
 
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
+
+    <button @click="asd">asd</button>
     <div class="wrapper">
       <HelloWorld msg="You did it!1" />
 
